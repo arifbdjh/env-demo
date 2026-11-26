@@ -1,12 +1,14 @@
 name: Env Demo
 
-on: workflow_dispatch
+on: push
 
 env:
-  APP_ENV: dev
+  APP_ENV: "dev"
 
 jobs:
   env_demo:
+    env:
+      APP_ENV: "test"
     runs-on: ubuntu-latest
     steps:
       - name: Connecting to Env
