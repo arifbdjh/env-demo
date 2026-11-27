@@ -3,8 +3,10 @@ on:
   workflow_dispatch:
     inputs:
       environment:
-      required: true
-      default: dev
+        description: "Where to deploy"
+        required: true
+        default: "dev"
+        type: string
 jobs:
   input-demo:
     runs-on: ubuntu-latest
