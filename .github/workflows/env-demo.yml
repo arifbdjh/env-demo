@@ -1,17 +1,13 @@
-name: Env Demo
-
-on: push
-
-env:
-  APP_ENV: "dev"
-
+name: Inputs Demo
+on:
+  workflow_dispatch:
+    inputs:
+      environment:
+      required: true
+      default: dev
 jobs:
-  env_demo:
-    env:
-      APP_ENV: "test"
+  input-demo:
     runs-on: ubuntu-latest
     steps:
-      - name: Connecting to Env
-        env:
-          APP_ENV: "prod"
-        run: echo "APP is connecting to $APP_ENV"
+      - name: Deploy the App
+        run: echo "Deploying the application to ${{inputs.environment}}"
