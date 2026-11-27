@@ -1,28 +1,14 @@
-name: Inputs Demo
-
-on:
-  workflow_dispatch:
-    inputs:
-      environment:
-        description: "Where to deploy"
-        required: true
-        default: dev
-        type: choice
-        options:
-          - dev
-          - test
-          - prod
-      artifact_tag:
-        description: "Choose the Git tag to deploy"
-        required: true
-        type: string
-
+name: Context variable demo
+on: push
 jobs:
-  input-demo:
+  context-demo:
     runs-on: ubuntu-latest
     steps:
-      - name: Deploy the App
-        env:
-          ARTIFACT_TAG: ${{ inputs.artifact_tag }}
-          TARGET_ENV: ${{ inputs.environment }}
-        run: printf 'Deploying the %s application to %s\n' "$ARTIFACT_TAG" "$TARGET_ENV"
+      - name: Use context variables
+        run: |
+          echo "This workflow is triggerd by ${{github.actor}}"
+          echo "The repository name is ${{ github.repository}}"
+          echo "The branch is ${{github.ref_name}}"
+
+      - name: Print all variables uner github
+        run: echo "${{ to Json(github)}}"
