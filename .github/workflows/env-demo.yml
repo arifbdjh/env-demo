@@ -13,3 +13,6 @@ jobs:
         run: echo "Running for main branch"
       - name: Run alwasy
         run: echo "Running alwasy"
+
+      - name: Another name
+        run: this is anothe name
