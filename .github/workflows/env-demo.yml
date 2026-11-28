@@ -9,9 +9,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Run if branch is main
-        if: github.ref == 'refs/heads/main'
+        if: github.ref_name == 'main'
         run: echo "Running for main branch"
       - name: Run alwasy
         run: echo "Running alwasy"
       - name: Another name
-        run: cat "this is anothe name"
+        run: echo "this is anothe name"
