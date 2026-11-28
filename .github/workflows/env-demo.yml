@@ -1,17 +1,11 @@
-name: Output Demo
-on:
-  push:
-    branches:
-      - main
-      - develop
+name: Or Condition Demo
+on: push
+
 jobs:
   demo:
     runs-on: ubuntu-latest
     steps:
-      - name: Run if branch is main
-        if: github.ref_name == 'main'
+      - name: Run for arifbdjh or karimbdjh
+        if: github.actor == 'arifbdjh' || github.actor == 'karimbdjh'
         run: echo "Running for main branch"
-      - name: Run alwasy
-        run: echo "Running alwasy"
-      - name: Another name
-        run: echo "this is anothe name"
+
