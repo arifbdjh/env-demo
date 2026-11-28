@@ -7,5 +7,5 @@ jobs:
     steps:
       - name: Run for arifbdjh or karimbdjh
         if: github.actor == 'arifbdjh' || github.actor == 'karimbdjh'
-        run: echo "Running for main branch"
+        run: echo "Running for arifbdjh"
 
