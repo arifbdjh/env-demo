@@ -1,11 +1,14 @@
 name: Or Condition Demo
-on: push
+on:
+  pull_request:
+    types:
+      - opened
+      - synchronize
 
 jobs:
-  demo:
+  build:
     runs-on: ubuntu-latest
     steps:
-      - name: Run for arifbdjh or karimbdjh
-        if: github.actor == 'arifbdjh' || github.actor == 'karimbdjh'
+      - name: Build step
         run: echo "Running for arifbdjh"
 
