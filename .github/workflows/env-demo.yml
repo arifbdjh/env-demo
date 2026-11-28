@@ -14,4 +14,4 @@ jobs:
       - name: Run alwasy
         run: echo "Running alwasy"
       - name: Another name
-        run: echo "this is anothe name"
+        run: cat "this is anothe name"
